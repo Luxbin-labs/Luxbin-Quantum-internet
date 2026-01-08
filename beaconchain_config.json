@@ -1,0 +1,39 @@
+{
+  "api_key": "p394i31QvTe8WfzT08IEGbt85shA6HlmS75OxKzM8H9",
+  "validators": [
+    {
+      "index": 4276,
+      "status": "active_online",
+      "balance_eth": 32.0125,
+      "effective_balance_eth": 32.0000
+    },
+    {
+      "index": 4277,
+      "status": "checking"
+    },
+    {
+      "index": 4278,
+      "status": "checking"
+    },
+    {
+      "index": 4279,
+      "status": "checking"
+    },
+    {
+      "index": 4280,
+      "status": "checking"
+    },
+    {
+      "index": 4281,
+      "status": "active_online",
+      "balance_eth": 32.0125,
+      "effective_balance_eth": 32.0000
+    }
+  ],
+  "base_url_v1": "https://beaconcha.in/api/v1",
+  "base_url_v2": "https://beaconcha.in/api/v2",
+  "quantum_enabled": true,
+  "quantum_computers": 3,
+  "total_qubits": 445,
+  "quantum_internet_enabled": true
+}
