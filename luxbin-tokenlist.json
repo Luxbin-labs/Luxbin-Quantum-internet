@@ -1,0 +1,22 @@
+{
+  "name": "LUXBIN Token List",
+  "timestamp": "2026-01-10T00:00:00.000Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "logoURI": "https://raw.githubusercontent.com/mermaidnicheboutique-code/luxbin-quantum-internet/main/assets/logo-200x200.png",
+  "keywords": ["luxbin", "quantum", "defi", "base"],
+  "tokens": [
+    {
+      "chainId": 8453,
+      "address": "0xbB5bf2139CbACDeE52991cf32f9c4d558B9464d0",
+      "name": "LUXBIN Quantum Token",
+      "symbol": "LUX",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/mermaidnicheboutique-code/luxbin-quantum-internet/main/assets/logo-200x200.png",
+      "tags": ["defi", "staking", "quantum"]
+    }
+  ]
+}
