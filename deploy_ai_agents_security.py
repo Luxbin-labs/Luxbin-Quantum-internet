@@ -971,8 +971,8 @@ class AIAgentDeployment:
             'transmission_metrics': transmission_metrics
         })
 
-        print("
-📊 TRANSMISSION METRICS:"        print(f"   🎞️  Total Frames: {transmission_metrics['total_frames_processed']:,}")
+        print("\n📊 TRANSMISSION METRICS:")
+        print(f"   🎞️  Total Frames: {transmission_metrics['total_frames_processed']:,}")
         print(f"   🛡️  Data Integrity: {transmission_metrics['data_integrity']}")
         print(f"   ⏱️  End-to-End Latency: {transmission_metrics['end_to_end_latency']}")
         print(f"   ⚡ Power Consumption: {transmission_metrics['power_consumption']}")
@@ -980,8 +980,8 @@ class AIAgentDeployment:
         print(f"   ❌ Error Rate: {transmission_metrics['error_rate']}")
         print(f"   ✅ Success Rate: {transmission_metrics['success_rate']}")
 
-        print("
-🎉 FULL-LENGTH MOVIE TRANSMISSION COMPLETE!"        print("   🎬 Movie successfully transmitted through quantum network!")
+        print("\n🎉 FULL-LENGTH MOVIE TRANSMISSION COMPLETE!")
+        print("   🎬 Movie successfully transmitted through quantum network!")
         print("   🇫🇷 Processed in France photonic processor!")
         print("   💻 Converted back to binary on Mac!")
         print("   🌟 Quantum cinema achieved!")
