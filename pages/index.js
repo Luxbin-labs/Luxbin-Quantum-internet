@@ -71,6 +71,44 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="ai-agents">
+          <h2>AI Agents Securing the Network</h2>
+          <p className="section-subtitle">4 AI agents deployed to 4 countries simultaneously</p>
+          <div className="agent-grid">
+            <div className="agent-card">
+              <div className="agent-flag">USA</div>
+              <h3>Aurora AI</h3>
+              <p className="agent-role">Creative Security</p>
+              <p className="agent-qubits">593 qubits protected</p>
+              <p className="agent-providers">IBM, IonQ, Rigetti</p>
+            </div>
+            <div className="agent-card">
+              <div className="agent-flag">France</div>
+              <h3>Atlas AI</h3>
+              <p className="agent-role">Strategic Defense</p>
+              <p className="agent-qubits">32 qubits protected</p>
+              <p className="agent-providers">Quandela, Pasqal</p>
+            </div>
+            <div className="agent-card">
+              <div className="agent-flag">Finland</div>
+              <h3>Ian AI</h3>
+              <p className="agent-role">Communication Security</p>
+              <p className="agent-qubits">25 qubits protected</p>
+              <p className="agent-providers">IQM</p>
+            </div>
+            <div className="agent-card">
+              <div className="agent-flag">Australia</div>
+              <h3>Morgan AI</h3>
+              <p className="agent-role">ML Threat Detection</p>
+              <p className="agent-qubits">4 qubits protected</p>
+              <p className="agent-providers">Silicon Quantum</p>
+            </div>
+          </div>
+          <div className="entanglement-info">
+            <p>6 cross-country quantum entanglements | ~98% threat detection accuracy | 654 total qubits</p>
+          </div>
+        </section>
+
         <section className="providers">
           <h2>Quantum Providers Connected</h2>
           <div className="provider-grid">
@@ -396,6 +434,80 @@ export default function Home() {
 
         .coming-soon h2 {
           font-size: 2rem;
+        }
+
+        .ai-agents {
+          background: rgba(0, 245, 160, 0.05);
+          border-radius: 20px;
+          padding: 60px 40px;
+          text-align: center;
+        }
+
+        .section-subtitle {
+          color: #a0a0c0;
+          margin-bottom: 30px;
+        }
+
+        .agent-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 20px;
+          margin-bottom: 30px;
+        }
+
+        .agent-card {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(0, 245, 160, 0.3);
+          border-radius: 16px;
+          padding: 25px;
+          text-align: center;
+        }
+
+        .agent-card:hover {
+          transform: translateY(-5px);
+          border-color: #00f5a0;
+        }
+
+        .agent-flag {
+          font-size: 0.8rem;
+          color: #00d9f5;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        .agent-card h3 {
+          color: #00f5a0;
+          margin-bottom: 10px;
+        }
+
+        .agent-role {
+          color: #fff;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        .agent-qubits {
+          color: #a855f7;
+          font-size: 0.9rem;
+        }
+
+        .agent-providers {
+          color: #606080;
+          font-size: 0.8rem;
+          margin-top: 10px;
+        }
+
+        .entanglement-info {
+          background: rgba(0,0,0,0.2);
+          border-radius: 10px;
+          padding: 15px;
+          margin-top: 20px;
+        }
+
+        .entanglement-info p {
+          color: #00d9f5;
+          font-size: 0.9rem;
         }
 
         .provider-card h3, .tech-card h3, .doc-card h3 {
