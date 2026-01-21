@@ -2,6 +2,7 @@
   <img src="https://img.shields.io/badge/🌐_QUANTUM-INTERNET-blueviolet?style=for-the-badge&logoColor=white" alt="Quantum Internet"/>
   <img src="https://img.shields.io/badge/⚛️_803-QUBITS-00d4aa?style=for-the-badge" alt="803 Qubits"/>
   <img src="https://img.shields.io/badge/🌍_4-COUNTRIES-ff6b6b?style=for-the-badge" alt="4 Countries"/>
+  <img src="https://img.shields.io/badge/🌐_133-LANGUAGES-green?style=for-the-badge" alt="133 Languages"/>
 </p>
 
 <h1 align="center">🔮 LUXBIN Quantum Internet</h1>
@@ -151,6 +152,12 @@ result = await qrng.generate_random_bits(8)
 ✅ **REST API** — Simple HTTP interface to quantum operations
 ✅ **AI Integration** — 4 specialized agents
 ✅ **Simulation Fallback** — Works without hardware access too
+
+---
+
+## 🌐 Multilingual Support
+
+LUXBIN Quantum Internet includes comprehensive multilingual support, enabling communication and interaction in 133 different languages. The integrated language translator allows users to translate queries, responses, and documentation seamlessly, powered by advanced AI translation services. This feature ensures accessibility and usability for a global audience, bridging language barriers in quantum computing.
 
 ---
 
