@@ -148,6 +148,12 @@ MIT License — Use it, fork it, build on it.
 
 ---
 
+## 🌐 Multilingual Support
+
+LUXBIN Quantum Internet includes comprehensive multilingual support, enabling communication and interaction in 133 different languages. The integrated language translator allows users to translate queries, responses, and documentation seamlessly, powered by advanced AI translation services. This feature ensures accessibility and usability for a global audience, bridging language barriers in quantum computing.
+
+---
+
 ## 📚 Citation
 
 ```bibtex
