@@ -1,134 +1,157 @@
 <p align="center">
-  <a href="https://mermaidnicheboutique-code.github.io/quantum-internet/">View in 133 Languages</a>
+  <img src="https://img.shields.io/badge/🌐_QUANTUM-INTERNET-blueviolet?style=for-the-badge&logoColor=white" alt="Quantum Internet"/>
+  <img src="https://img.shields.io/badge/⚛️_803-QUBITS-00d4aa?style=for-the-badge" alt="803 Qubits"/>
+  <img src="https://img.shields.io/badge/🌍_4-COUNTRIES-ff6b6b?style=for-the-badge" alt="4 Countries"/>
+</p>
+
+<h1 align="center">🔮 LUXBIN Quantum Internet</h1>
+
+<p align="center">
+  <b>The world's first international quantum network running over consumer WiFi</b><br>
+  <i>Connecting 803 qubits across 12+ quantum computers in USA, France, Finland & Australia</i>
 </p>
 
 <p align="center">
-  <b>Translate:</b><br>
-  <a href="https://translate.google.com/translate?sl=en&tl=es&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Espanol</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=fr&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Francais</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=de&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Deutsch</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=it&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Italiano</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=pt&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Portugues</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=ru&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Russkiy</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=zh-CN&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Chinese</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=ja&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Japanese</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=ko&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Korean</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=ar&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Arabic</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=hi&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Hindi</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=bn&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Bengali</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=vi&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Vietnamese</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=th&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Thai</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=id&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Indonesian</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=ms&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Malay</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=tl&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Filipino</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=tr&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Turkish</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=pl&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Polski</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=nl&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Nederlands</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=uk&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Ukrainian</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=el&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Greek</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=he&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Hebrew</a> |
-  <a href="https://translate.google.com/translate?sl=en&tl=sw&u=https://github.com/mermaidnicheboutique-code/quantum-internet">Swahili</a>
+  <a href="https://doi.org/10.5281/zenodo.18198505"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.18198505.svg" alt="DOI"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="https://bsiegelwax.substack.com/p/luxbin-quantum-internet"><img src="https://img.shields.io/badge/📰_Featured-The_Quantum_Dragon-orange" alt="Press"></a>
 </p>
 
 ---
 
-# LUXBIN Quantum Internet
+## 🚀 What Makes This Different
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18198505.svg)](https://doi.org/10.5281/zenodo.18198505)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Most "quantum" projects are simulations. **This isn't.**
 
-## Overview
+LUXBIN Quantum Internet orchestrates **real quantum hardware** from multiple providers into a unified network accessible over standard WiFi. No special equipment. No quantum lab. Just your laptop and an internet connection.
 
-The world's first international quantum internet with AI agents running over consumer WiFi. This project presents a functional quantum internet infrastructure connecting 12+ quantum computers across 4 countries (USA, France, Finland, Australia) using consumer WiFi networks.
+---
 
-## Key Technical Specifications
+## ⚡ At A Glance
 
-| Metric | Value |
-|--------|-------|
-| **Total Qubits** | 803 distributed across providers |
-| **Entanglement Pairs** | 91 in fully-connected mesh |
-| **Countries Connected** | 4 (USA, France, Finland, Australia) |
-| **Quantum Computers** | 12+ integrated systems |
-| **Operation Latency** | Sub-2-second quantum operations |
+| 🔢 | Metric | Value |
+|:--:|--------|-------|
+| ⚛️ | **Total Qubits** | 803 across all providers |
+| 🔗 | **Entanglement Pairs** | 91 in fully-connected mesh |
+| 🌍 | **Countries** | 4 (USA, France, Finland, Australia) |
+| 💻 | **Quantum Computers** | 12+ integrated systems |
+| ⏱️ | **Latency** | Sub-2-second quantum operations |
+| 🤖 | **AI Agents** | 4 specialized agents |
 
-### Quantum Provider Integration
+---
 
-- **IBM Quantum**: 445 qubits across 3 systems
-- **IonQ**: 68 qubits (trapped-ion technology)
-- **Rigetti**: 80 qubits
-- **Quandela, Pasqal, IQM, Silicon Quantum Computing**: Additional systems
+## 🔬 Quantum Providers Integrated
 
-## Operational Features
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    LUXBIN QUANTUM MESH                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   🇺🇸 USA                        🇫🇷 FRANCE                     │
+│   ┌──────────────┐               ┌──────────────┐              │
+│   │ IBM Quantum  │───────────────│  Quandela    │              │
+│   │  445 qubits  │               │  (Photonic)  │              │
+│   └──────────────┘               └──────────────┘              │
+│          │                              │                       │
+│          │         ┌──────────┐         │                       │
+│          └─────────│ ENTANGLE │─────────┘                       │
+│                    │  91 pairs │                                │
+│          ┌─────────│   MESH   │─────────┐                       │
+│          │         └──────────┘         │                       │
+│          │                              │                       │
+│   ┌──────────────┐               ┌──────────────┐              │
+│   │    IonQ      │               │   Pasqal     │              │
+│   │  68 qubits   │───────────────│  (Neutral)   │              │
+│   └──────────────┘               └──────────────┘              │
+│   🇺🇸 USA                        🇫🇷 FRANCE                     │
+│                                                                 │
+│   ┌──────────────┐               ┌──────────────┐              │
+│   │   Rigetti    │               │     IQM      │              │
+│   │  80 qubits   │───────────────│  (Finland)   │              │
+│   └──────────────┘               └──────────────┘              │
+│   🇺🇸 USA                        🇫🇮 FINLAND                    │
+│                                                                 │
+│                    ┌──────────────┐                             │
+│                    │   Silicon    │                             │
+│                    │   Quantum    │                             │
+│                    │ (Australia)  │                             │
+│                    └──────────────┘                             │
+│                    🇦🇺 AUSTRALIA                                │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-- Quantum measurement and state preparation
-- Bell pair creation between heterogeneous quantum systems
-- Quantum teleportation over classical WiFi channels
-- Multi-provider orchestration through unified interfaces
-- REST API accessible via `localhost:8765`
-- Simulation fallback mode without quantum hardware access
+---
 
-## AI Agents
+## 🤖 AI Agents
 
-Four AI agents deployed across international locations:
+Four AI agents operate across the quantum network:
 
-| Agent | Specialization | Region |
-|-------|---------------|--------|
-| **Aurora** | Creative tasks | Global |
-| **Atlas** | Optimization | Global |
-| **Ian** | Communication | Global |
-| **Morgan** | Analytics | Global |
+| Agent | 🎯 Specialization | Description |
+|-------|------------------|-------------|
+| **🌅 Aurora** | Creative | Generates quantum-inspired creative solutions |
+| **🗺️ Atlas** | Optimization | Optimizes quantum circuit routing |
+| **📡 Ian** | Communication | Handles inter-node quantum messaging |
+| **📊 Morgan** | Analytics | Analyzes quantum state fidelity |
 
-## Quick Start
+---
+
+## 🏃 Quick Start
+
+Get running in under 2 minutes:
 
 ```bash
-# Clone the repository
-git clone https://github.com/mermaidnicheboutique-code/quantum-internet.git
+# Clone
+git clone https://github.com/nichechristie/quantum-internet.git
 cd quantum-internet
 
-# Install dependencies
+# Install
 pip install -r requirements.txt
 
-# Start the quantum server
-python quantum_server.py
-
-# Access at localhost:8765
+# Launch 🚀
+python quantum_internet_service.py
 ```
 
-**Setup time:** ~2 minutes | **Runs on:** Any computer with Python 3.8+
+Access the API at `http://localhost:8765`
 
-## Architecture
+---
 
-```
-                    +------------------+
-                    |   WiFi Network   |
-                    |  (Classical)     |
-                    +--------+---------+
-                             |
-         +-------------------+-------------------+
-         |                   |                   |
-+--------v-------+  +--------v-------+  +--------v-------+
-|  IBM Quantum   |  |     IonQ       |  |    Rigetti     |
-|  445 qubits    |  |   68 qubits    |  |   80 qubits    |
-+----------------+  +----------------+  +----------------+
-         |                   |                   |
-         +-------------------+-------------------+
-                             |
-                    +--------v---------+
-                    | Entanglement     |
-                    | Mesh (91 pairs)  |
-                    +------------------+
-```
+## 🎯 Features
 
-## License
+✅ **Real Quantum Hardware** — Not a simulator
+✅ **Multi-Provider Orchestration** — IBM, IonQ, Rigetti, and more
+✅ **Bell Pair Creation** — Entanglement across heterogeneous systems
+✅ **Quantum Teleportation** — State transfer over classical channels
+✅ **REST API** — Simple HTTP interface to quantum operations
+✅ **AI Integration** — 4 specialized agents
+✅ **Simulation Fallback** — Works without hardware access too
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+---
 
-## Citation
+## 📰 Press & Recognition
+
+> Featured in **[The Quantum Dragon](https://bsiegelwax.substack.com/p/luxbin-quantum-internet)** by Brian N. Siegelwax — quantum computing industry analyst
+
+---
+
+## 🛠️ Built With
+
+`Python` `Qiskit` `Cirq` `IonQ SDK` `Rigetti Forest` `Solidity` `REST API`
+
+---
+
+## 📄 License
+
+MIT License — Use it, fork it, build on it.
+
+---
+
+## 📚 Citation
 
 ```bibtex
 @software{luxbin_quantum_internet,
-  author = {LUXBIN},
-  title = {Quantum Internet Infrastructure},
+  author = {Christie, Nichole},
+  title = {LUXBIN Quantum Internet},
   year = {2025},
   doi = {10.5281/zenodo.18198505}
 }
@@ -137,5 +160,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <p align="center">
-  <b>Not a simulation.</b> Real quantum infrastructure over consumer WiFi.
+  <b>🔮 The future of networking is quantum. This is the beginning.</b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/nichechristie">Built by Nichole Christie</a> ✨
 </p>
