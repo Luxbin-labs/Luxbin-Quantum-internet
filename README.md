@@ -108,11 +108,37 @@ cd quantum-internet
 # Install
 pip install -r requirements.txt
 
+# Copy env and add your API keys
+cp .env.example .env
+
 # Launch 🚀
-python quantum_internet_service.py
+python luxbin_quantum_service.py
 ```
 
-Access the API at `http://localhost:8765`
+Access the dashboard at `http://localhost:8765`
+
+---
+
+## 🆕 v2.0 - Real Quantum Operations
+
+The latest version executes **actual quantum circuits** — no more `random.uniform()`:
+
+| Component | What It Does |
+|-----------|--------------|
+| **Real QRNG** | Hadamard + measure on IBM Quantum hardware |
+| **Real Bell Pairs** | Creates and measures actual entanglement |
+| **Real Teleportation** | Full quantum teleportation protocol |
+| **Proper Simulation** | Qiskit Aer with realistic noise models |
+| **Real AI Agents** | Connected to Claude, GPT, or Groq APIs |
+
+```python
+# Example: Generate quantum random bits
+from real_quantum_operations import get_qrng
+
+qrng = get_qrng()
+result = await qrng.generate_random_bits(8)
+# Returns actual quantum measurement results, not random.uniform()
+```
 
 ---
 

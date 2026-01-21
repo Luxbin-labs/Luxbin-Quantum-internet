@@ -1,2 +1,24 @@
+# Quantum Computing
 qiskit>=1.0.0
-qiskit-ibm-runtime>=0.17.0
+qiskit-ibm-runtime>=0.20.0
+qiskit-aer>=0.13.0
+
+# Additional Quantum Providers (optional)
+# qiskit-ionq
+# amazon-braket-sdk
+# azure-quantum
+
+# AI APIs (at least one recommended)
+openai>=1.0.0
+anthropic>=0.18.0
+groq>=0.4.0
+
+# Web Server
+aiohttp>=3.9.0
+python-dotenv>=1.0.0
+
+# Networking
+netifaces>=0.11.0
+
+# Utilities
+numpy>=1.24.0
