@@ -101,12 +101,8 @@ class LUXBINEIPImplementations:
         qc.measure(0, 0)
         qc.measure(1, 1)
 
-        # Apply corrections based on measurements (classical post-processing)
-        # Note: In real implementation, corrections would be applied after receiving classical bits
-        qc.x(2).c_if(qc.clbits[1], 1)  # If bit1=1, apply X to qubit 2
-        qc.z(2).c_if(qc.clbits[0], 1)  # If bit0=1, apply Z to qubit 2
-
-        # Final measurement of teleported state
+        # Note: Corrections would be applied classically after receiving measurement bits
+        # For circuit simulation, we measure all qubits; corrections applied in post-processing
         qc.measure(2, 2)
 
         description = "EIP-004 Quantum Teleportation: Transfers quantum state using entanglement"
