@@ -1,0 +1,106 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "luxbin-quantum-internet"
+version = "1.0.0"
+description = "LUXBIN Quantum Internet - Unified photonic quantum networking platform"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Nichole Christie", email = "nichole@nicheai.com"}
+]
+maintainers = [
+    {name = "Nicheai", email = "team@nicheai.com"}
+]
+keywords = [
+    "quantum",
+    "internet",
+    "photonic",
+    "entanglement",
+    "nv-center",
+    "blockchain",
+    "p2p",
+    "luxbin"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: System :: Networking",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+quantum = [
+    "qiskit>=1.0.0",
+    "qiskit-ibm-runtime>=0.20.0",
+    "qiskit-aer>=0.14.0",
+]
+photonics = [
+    "cirq>=1.3.0",
+]
+ai = [
+    "anthropic>=0.18.0",
+    "openai>=1.0.0",
+    "groq>=0.4.0",
+]
+braket = [
+    "boto3>=1.34.0",
+    "amazon-braket-sdk>=1.70.0",
+]
+azure = [
+    "azure-quantum>=0.28.0",
+]
+ionq = [
+    "qiskit-ionq>=0.5.0",
+]
+all = [
+    "luxbin-quantum-internet[quantum,photonics,ai,braket,azure,ionq]",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nichechristie/luxbin-quantum-internet"
+Documentation = "https://luxbin.io/docs"
+Repository = "https://github.com/nichechristie/luxbin-quantum-internet"
+Issues = "https://github.com/nichechristie/luxbin-quantum-internet/issues"
+
+[project.scripts]
+luxbin = "luxbin.services.quantum_service:main"
+luxbin-demo = "luxbin.examples.nv_entanglement_demo:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["luxbin*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310', 'py311', 'py312']
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
