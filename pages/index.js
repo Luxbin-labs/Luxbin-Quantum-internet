@@ -6,10 +6,13 @@ function BackgroundVideos() {
   const videoRef = useRef(null);
 
   const videos = [
+    "https://nicheai.vercel.app/hero-robot-video.mp4",
     "https://nicheai.vercel.app/bg-video-1.mp4",
     "https://nicheai.vercel.app/bg-video-2.mp4",
+    "https://nicheai.vercel.app/hero-robot-video.mp4",
     "https://nicheai.vercel.app/bg-video-3.mp4",
     "https://nicheai.vercel.app/bg-video-4.mp4",
+    "https://nicheai.vercel.app/hero-robot-video.mp4",
     "https://nicheai.vercel.app/bg-video-5.mp4",
     "https://nicheai.vercel.app/bg-video-6.mp4"
   ];
