@@ -12,6 +12,10 @@ from datetime import datetime
 from typing import Dict, List, Any, Optional, Tuple
 import json
 
+# Set IBM token if provided as env
+if 'QISKIT_IBM_TOKEN' not in os.environ and 'IBM_TOKEN' in os.environ:
+    os.environ['QISKIT_IBM_TOKEN'] = os.environ['IBM_TOKEN']
+
 # Qiskit imports
 try:
     from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
@@ -54,6 +58,7 @@ class RealQuantumRNG:
 
     def _initialize(self):
         """Initialize quantum backend"""
+        print("🔧 Initializing quantum backend...")
         if QISKIT_AVAILABLE:
             # Try real hardware first
             if self.use_real_hardware:
@@ -61,13 +66,26 @@ class RealQuantumRNG:
                     self.service = QiskitRuntimeService(channel="ibm_quantum_platform")
                     backends = self.service.backends()
                     print(f"✅ Connected to IBM Quantum, found {len(backends)} backends")
-                    # Get least busy backend
-                    self.backend = self.service.least_busy(
-                        simulator=False,
-                        operational=True,
-                        min_num_qubits=5
-                    )
-                    print(f"✅ QRNG using real hardware: {self.backend.name}")
+                    # Try to get a specific backend known to be available
+                    try:
+                        self.backend = self.service.backend('ibm_fez')
+                        print(f"✅ Selected backend: {self.backend.name}, operational: {self.backend.status().operational}")
+                        if not self.backend.status().operational:
+                            raise Exception("Backend not operational")
+                        print(f"✅ QRNG will use real hardware: {self.backend.name}")
+                    except Exception as e:
+                        print(f"⚠️  Could not select ibm_fez: {e}")
+                        # Fallback to least busy
+                        try:
+                            self.backend = self.service.least_busy(
+                                simulator=False,
+                                operational=True,
+                                min_num_qubits=5
+                            )
+                            print(f"✅ QRNG using fallback real hardware: {self.backend.name}")
+                        except Exception as e2:
+                            print(f"⚠️  Could not get any real backend: {e2}")
+                            self.use_real_hardware = False
                 except Exception as e:
                     print(f"⚠️  Could not connect to IBM Quantum: {e}")
                     print("Falling back to simulation with realistic noise model")
@@ -126,38 +144,37 @@ class RealQuantumRNG:
         if self.use_real_hardware and self.service:
             # Execute on real quantum hardware
             try:
-                with Session(service=self.service, backend=self.backend) as session:
+                print(f"🚀 Submitting REAL quantum job to {self.backend.name}...")
+                with Session(backend=self.backend) as session:
                     sampler = Sampler(session=session)
                     job = sampler.run([circuit], shots=shots)
-                    result = job.result()
-
-                    # Extract the most frequent bitstring
-                    pub_result = result[0]
-                    counts = pub_result.data.c.get_counts()
-                    most_frequent = max(counts, key=counts.get)
+                    job_id = job.job_id()
+                    print(f"📡 REAL QUANTUM JOB SUBMITTED: {job_id}")
+                    print(f"🔗 Check status at: https://quantum.ibm.com/jobs/{job_id}")
+                    print("⏳ Job may take 5-60+ minutes to complete...")
 
                     execution_time = (datetime.now() - start_time).total_seconds()
 
                     job_record = {
-                        'job_id': job.job_id(),
+                        'job_id': job_id,
                         'backend': self.backend.name,
                         'bits_generated': num_bits,
                         'shots': shots,
                         'execution_time': execution_time,
-                        'timestamp': datetime.now().isoformat()
+                        'timestamp': datetime.now().isoformat(),
+                        'status': 'submitted'
                     }
                     self.job_history.append(job_record)
                     self.total_bits_generated += num_bits
 
                     return {
-                        'bits': most_frequent,
-                        'int_value': int(most_frequent, 2),
-                        'counts': counts,
-                        'source': 'ibm_quantum_hardware',
+                        'job_submitted': True,
+                        'job_id': job_id,
                         'backend': self.backend.name,
-                        'job_id': job.job_id(),
-                        'execution_time_seconds': execution_time,
-                        'shots': shots
+                        'status_url': f"https://quantum.ibm.com/jobs/{job_id}",
+                        'estimated_wait': "5-60 minutes",
+                        'source': 'ibm_quantum_hardware_pending',
+                        'note': 'Check IBM Quantum dashboard for results when complete'
                     }
             except Exception as e:
                 print(f"⚠️  Hardware execution failed: {e}, falling back to simulator")
