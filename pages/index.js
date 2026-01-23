@@ -680,8 +680,7 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Interactive AI Agents Chat */}
-      <MultiAgentChat />
+
     </>
   )
 }
