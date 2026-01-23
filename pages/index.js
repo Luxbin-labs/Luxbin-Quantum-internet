@@ -40,8 +40,8 @@ export default function Home() {
             <a href="https://github.com/nichechristie/Luxbin-Quantum-internet/archive/refs/heads/main.zip" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
               Free Download for Classical Computers
             </a>
-            <a href="/download" className="btn btn-secondary">
-              Paid Quantum Access
+            <a href="/info" className="btn btn-secondary">
+              Learn More About the Software
             </a>
           </div>
         </header>
