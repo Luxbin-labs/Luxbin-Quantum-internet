@@ -33,8 +33,9 @@ export default function Home() {
           <div className="hero-badge" style={{fontFamily: 'Inter, sans-serif', fontWeight: 600, color: '#fff', backgroundColor: '#007bff', padding: '5px 10px', borderRadius: '5px'}}>Quantum Internet Software Suite</div>
           <h1 style={{fontFamily: 'Inter, sans-serif', fontSize: '3rem', fontWeight: 700, color: '#000'}}>Quantum Internet</h1>
           <p className="tagline" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.2rem', color: '#000'}}>Software for photonic quantum networking, broadcasting, and secure communication</p>
-          <div style={{margin: '10px 0'}}>
-            <a href="https://nicheai-nx5p.vercel.app" style={{fontFamily: 'Inter, sans-serif', color: '#007bff', textDecoration: 'none', fontSize: '1.2rem'}} target="_blank" rel="noopener noreferrer">Explore NicheAI App</a>
+          <div style={{margin: '20px 0', display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap'}}>
+            <a href="https://luxbin-quantum-academy.vercel.app" className="academy-btn" target="_blank" rel="noopener noreferrer">🎓 Quantum Academy</a>
+            <a href="https://nicheai-nx5p.vercel.app" className="nicheai-btn" target="_blank" rel="noopener noreferrer">🤖 NicheAI App</a>
           </div>
           <div className="hero-buttons">
             <a href="https://github.com/nichechristie/Luxbin-Quantum-internet/archive/refs/heads/main.zip" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
@@ -45,6 +46,31 @@ export default function Home() {
             </a>
           </div>
         </header>
+
+        <section className="quantum-academy-promo">
+          <h2>🎓 LUXBIN Quantum Academy</h2>
+          <p className="section-subtitle">Master quantum computing with interactive experiments</p>
+          <div className="academy-features">
+            <div className="academy-feature">
+              <span className="feature-icon">🔬</span>
+              <h3>Virtual Lab</h3>
+              <p>Hands-on Bell pairs, teleportation, GHZ states</p>
+            </div>
+            <div className="academy-feature">
+              <span className="feature-icon">📚</span>
+              <h3>Courses</h3>
+              <p>From basics to advanced quantum protocols</p>
+            </div>
+            <div className="academy-feature">
+              <span className="feature-icon">🏆</span>
+              <h3>Certificates</h3>
+              <p>Blockchain-verified credentials</p>
+            </div>
+          </div>
+          <a href="https://luxbin-quantum-academy.vercel.app" className="btn btn-primary" target="_blank" rel="noopener noreferrer" style={{marginTop: '30px', display: 'inline-block'}}>
+            Launch Quantum Academy →
+          </a>
+        </section>
 
         <section className="stats" style={{padding: '20px'}}>
           <div className="stat-card" style={{color: '#000', textAlign: 'center'}}>
@@ -601,6 +627,92 @@ export default function Home() {
           font-size: 0.9rem;
         }
 
+        .academy-btn {
+          font-family: 'Inter', sans-serif;
+          color: #00f5a0;
+          text-decoration: none;
+          font-size: 1.3rem;
+          font-weight: 600;
+          padding: 14px 28px;
+          background: linear-gradient(135deg, rgba(0, 245, 160, 0.2), rgba(0, 217, 245, 0.1));
+          border-radius: 30px;
+          border: 2px solid #00f5a0;
+          transition: all 0.3s ease;
+          animation: academyGlow 2s ease-in-out infinite alternate;
+        }
+
+        .academy-btn:hover {
+          background: linear-gradient(135deg, rgba(0, 245, 160, 0.4), rgba(0, 217, 245, 0.2));
+          transform: translateY(-3px);
+          box-shadow: 0 10px 30px rgba(0, 245, 160, 0.3);
+        }
+
+        @keyframes academyGlow {
+          from { box-shadow: 0 0 10px rgba(0, 245, 160, 0.3); }
+          to { box-shadow: 0 0 25px rgba(0, 245, 160, 0.6); }
+        }
+
+        .nicheai-btn {
+          font-family: 'Inter', sans-serif;
+          color: #00d9f5;
+          text-decoration: none;
+          font-size: 1.2rem;
+          padding: 14px 28px;
+          background: rgba(0, 217, 245, 0.1);
+          border-radius: 30px;
+          border: 1px solid #00d9f5;
+          transition: all 0.3s ease;
+        }
+
+        .nicheai-btn:hover {
+          background: rgba(0, 217, 245, 0.2);
+          transform: translateY(-2px);
+        }
+
+        .quantum-academy-promo {
+          background: linear-gradient(135deg, rgba(0, 245, 160, 0.1), rgba(168, 85, 247, 0.1));
+          border: 1px solid rgba(0, 245, 160, 0.3);
+          border-radius: 24px;
+          padding: 60px 40px;
+          text-align: center;
+          margin: 40px 0;
+        }
+
+        .academy-features {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 30px;
+          margin-top: 40px;
+        }
+
+        .academy-feature {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 16px;
+          padding: 30px 20px;
+          transition: transform 0.3s ease;
+        }
+
+        .academy-feature:hover {
+          transform: translateY(-5px);
+        }
+
+        .feature-icon {
+          font-size: 2.5rem;
+          display: block;
+          margin-bottom: 15px;
+        }
+
+        .academy-feature h3 {
+          color: #00f5a0;
+          margin-bottom: 10px;
+          font-size: 1.3rem;
+        }
+
+        .academy-feature p {
+          color: #a0a0c0;
+          font-size: 0.95rem;
+        }
+
         @media (max-width: 768px) {
           .hero h1 {
             font-size: 2.5rem;
@@ -610,6 +722,10 @@ export default function Home() {
           }
           .stat-number {
             font-size: 2rem;
+          }
+          .academy-btn, .nicheai-btn {
+            font-size: 1rem;
+            padding: 12px 20px;
           }
         }
       `}</style>
