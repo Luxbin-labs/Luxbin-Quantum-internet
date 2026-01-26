@@ -11,6 +11,7 @@
     "@coinbase/cdp-core": "^0.0.78",
     "@coinbase/cdp-hooks": "^0.0.78",
     "@coinbase/cdp-react": "^0.0.78",
+    "@farcaster/miniapp-sdk": "^0.2.1",
     "next": "16.1.1",
     "react": "^19",
     "react-dom": "^19",

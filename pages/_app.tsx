@@ -6,9 +6,15 @@ const CDPWrapper = dynamic(
   { ssr: false }
 );
 
+const MiniKitReady = dynamic(
+  () => import("../components/MiniKitReady"),
+  { ssr: false }
+);
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <CDPWrapper>
+      <MiniKitReady />
       <Component {...pageProps} />
     </CDPWrapper>
   );
