@@ -10,7 +10,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://luxbin-saas-api.verc
 function SignUpForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const plan = searchParams.get('plan') || 'free';
+  const plan = searchParams?.get('plan') || 'free';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
