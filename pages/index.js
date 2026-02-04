@@ -16,11 +16,44 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Quantum Internet | Software Suite for Photonic Networking</title>
-        <meta name="description" content="Comprehensive software suite for quantum-inspired photonic networking, broadcasting, AI agents, and secure communication protocols" />
+        <title>Quantum Internet - Free Software for Photonic Quantum Networking | LUXBIN</title>
+        <meta name="description" content="Download free quantum internet software. Build quantum networks with photonic broadcasting, quantum encryption, AI agents, and IBM Quantum integration. The future of secure internet communication." />
+        <meta name="keywords" content="quantum internet, quantum networking, photonic networking, quantum communication, quantum encryption, quantum software, IBM quantum, quantum computing, secure communication, quantum broadcast" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://luxbinquantuminternet.xyz" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://luxbinquantuminternet.xyz" />
+        <meta property="og:title" content="Quantum Internet - Free Software for Photonic Quantum Networking" />
+        <meta property="og:description" content="Download free quantum internet software. Build quantum networks with photonic broadcasting, quantum encryption, and AI agents." />
+        <meta property="og:image" content="https://luxbinquantuminternet.xyz/og-image.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Quantum Internet - Free Software for Photonic Quantum Networking" />
+        <meta name="twitter:description" content="Download free quantum internet software. Build quantum networks with photonic broadcasting and quantum encryption." />
+
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+        {/* Structured Data for Google */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Quantum Internet Software Suite",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Windows, macOS, Linux",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Free quantum internet software for photonic networking, quantum encryption, and secure communication protocols.",
+          "url": "https://luxbinquantuminternet.xyz",
+          "downloadUrl": "https://github.com/nichechristie/Luxbin-Quantum-internet/archive/refs/heads/main.zip"
+        })}} />
       </Head>
 
       <video autoPlay muted loop style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, objectFit: 'cover'}}>

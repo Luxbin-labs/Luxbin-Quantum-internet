@@ -43,3 +43,4 @@ out/
 .vercel/
 package-lock.json
 .vercel
+.env*.local
