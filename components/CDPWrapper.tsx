@@ -1,12 +1,19 @@
 import { CDPReactProvider, type Config as CDPConfig } from "@coinbase/cdp-react";
 
+const projectId = process.env.NEXT_PUBLIC_COINBASE_PROJECT_ID;
+
 const cdpConfig: CDPConfig = {
-  projectId: process.env.NEXT_PUBLIC_COINBASE_PROJECT_ID || "",
+  projectId: projectId || "",
   appName: "Luxbin",
-  appLogoUrl: "https://quantum-internet.vercel.app/favicon.svg",
+  appLogoUrl: "https://luxbinquantuminternet.xyz/icon.jpg",
 };
 
 export default function CDPWrapper({ children }: { children: React.ReactNode }) {
+  // If no project ID configured, skip the CDP provider to avoid crashes
+  if (!projectId) {
+    return <>{children}</>;
+  }
+
   return (
     <CDPReactProvider config={cdpConfig}>
       {children}

@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
+import "../styles/globals.css";
 
 const CDPWrapper = dynamic(
   () => import("../components/CDPWrapper"),
