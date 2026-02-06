@@ -6,6 +6,9 @@ const cdpConfig: CDPConfig = {
   projectId: projectId || "",
   appName: "Luxbin",
   appLogoUrl: "https://luxbinquantuminternet.xyz/icon.jpg",
+  ethereum: {
+    createOnLogin: "eoa",
+  },
 };
 
 export default function CDPWrapper({ children }: { children: React.ReactNode }) {
