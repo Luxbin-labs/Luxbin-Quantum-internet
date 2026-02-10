@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (networks) queryParams.append("networks", String(networks));
 
     const queryString = queryParams.toString();
-    const apiPath = "/v1/buy/options";
+    const apiPath = "/onramp/v1/buy/options";
     const fullPath = apiPath + (queryString ? `?${queryString}` : "");
 
     const jwt = await generateCDPJWT({
@@ -31,7 +31,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       requestPath: apiPath,
     });
 
-    const response = await fetch(`${ONRAMP_API_BASE_URL}${fullPath}`, {
+    const apiOrigin = new URL(ONRAMP_API_BASE_URL).origin;
+    const response = await fetch(`${apiOrigin}${fullPath}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${jwt}`,

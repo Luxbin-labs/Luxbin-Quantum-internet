@@ -1,4 +1,4 @@
-import { SignJWT, importPKCS8 } from "jose";
+import { SignJWT, importPKCS8, importJWK } from "jose";
 import crypto from "crypto";
 
 export const ONRAMP_API_BASE_URL = "https://api.developer.coinbase.com/onramp";
@@ -14,13 +14,13 @@ export function getCDPCredentials() {
   return { keyId, keySecret };
 }
 
-function buildPem(secret: string): string {
-  const lines = ["-----BEGIN EC PRIVATE KEY-----"];
-  for (let i = 0; i < secret.length; i += 64) {
-    lines.push(secret.slice(i, i + 64));
+function isEd25519Key(secret: string): boolean {
+  try {
+    const decoded = Buffer.from(secret, "base64");
+    return decoded.length === 64;
+  } catch {
+    return false;
   }
-  lines.push("-----END EC PRIVATE KEY-----");
-  return lines.join("\n");
 }
 
 export async function generateCDPJWT({
@@ -38,19 +38,43 @@ export async function generateCDPJWT({
   const now = Math.floor(Date.now() / 1000);
   const nonce = crypto.randomUUID();
 
-  const pem = buildPem(keySecret);
-  const privateKey = await importPKCS8(pem, "ES256");
-
-  const jwt = await new SignJWT({
+  const claims = {
     sub: keyId,
     iss: "cdp",
     aud: ["cdp_service"],
-    nbf: now,
-    exp: now + 120,
     uris: [uri],
-  })
-    .setProtectedHeader({ alg: "ES256", kid: keyId, nonce, typ: "JWT" })
-    .sign(privateKey);
+  };
 
-  return jwt;
+  if (isEd25519Key(keySecret)) {
+    // Ed25519 key: 64 bytes base64 (32 seed + 32 public key)
+    const decoded = Buffer.from(keySecret, "base64");
+    const seed = decoded.subarray(0, 32);
+    const publicKey = decoded.subarray(32);
+
+    const jwk = {
+      kty: "OKP" as const,
+      crv: "Ed25519" as const,
+      d: seed.toString("base64url"),
+      x: publicKey.toString("base64url"),
+    };
+
+    const key = await importJWK(jwk, "EdDSA");
+
+    return await new SignJWT(claims)
+      .setProtectedHeader({ alg: "EdDSA", kid: keyId, typ: "JWT", nonce })
+      .setIssuedAt(now)
+      .setNotBefore(now)
+      .setExpirationTime(now + 120)
+      .sign(key);
+  } else {
+    // EC key in PEM format
+    const privateKey = await importPKCS8(keySecret, "ES256");
+
+    return await new SignJWT(claims)
+      .setProtectedHeader({ alg: "ES256", kid: keyId, typ: "JWT", nonce })
+      .setIssuedAt(now)
+      .setNotBefore(now)
+      .setExpirationTime(now + 120)
+      .sign(privateKey);
+  }
 }
