@@ -43,7 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!response.ok) {
       const errorText = await response.text();
       console.error("CDP Onramp API error:", response.status, errorText);
-      return res.status(response.status).json({ error: "Failed to fetch buy options" });
+      return res.status(response.status).json({ error: "Failed to fetch buy options", details: errorText, cdpStatus: response.status });
     }
 
     const data = await response.json();

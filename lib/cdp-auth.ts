@@ -11,7 +11,7 @@ export function getCDPCredentials() {
     throw new Error("CDP API credentials not configured");
   }
 
-  return { keyId, keySecret };
+  return { keyId: keyId.trim(), keySecret: keySecret.trim() };
 }
 
 function isEd25519Key(secret: string): boolean {
