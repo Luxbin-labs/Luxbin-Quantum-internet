@@ -1,6 +1,11 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
+const CDPWrapper = dynamic(
+  () => import("../components/CDPWrapper"),
+  { ssr: false }
+);
+
 const EmbeddedWalletAuth = dynamic(
   () => import("../components/EmbeddedWallet").then((mod) => mod.EmbeddedWalletAuth),
   { ssr: false }
@@ -28,7 +33,9 @@ export default function WalletPage() {
         <p style={{ color: "#999", marginBottom: "32px" }}>
           Sign in with email or SMS to access your embedded wallet
         </p>
-        <EmbeddedWalletAuth />
+        <CDPWrapper>
+          <EmbeddedWalletAuth />
+        </CDPWrapper>
       </div>
     </>
   );
