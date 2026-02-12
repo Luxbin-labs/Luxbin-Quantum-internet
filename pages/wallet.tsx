@@ -1,23 +1,7 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const WalletContentClient = dynamic(
-  async () => {
-    const [{ default: CDPWrapper }, { EmbeddedWalletAuth }] = await Promise.all([
-      import("../components/CDPWrapper"),
-      import("../components/EmbeddedWallet"),
-    ]);
-    function WalletContent() {
-      return (
-        <CDPWrapper>
-          <EmbeddedWalletAuth />
-        </CDPWrapper>
-      );
-    }
-    return WalletContent;
-  },
-  { ssr: false }
-);
+const WalletApp = dynamic(() => import("../components/WalletApp"), { ssr: false });
 
 export default function WalletPage() {
   return (
@@ -41,7 +25,7 @@ export default function WalletPage() {
         <p style={{ color: "#999", marginBottom: "32px" }}>
           Sign in with email or SMS to access your embedded wallet
         </p>
-        <WalletContentClient />
+        <WalletApp />
       </div>
     </>
   );
