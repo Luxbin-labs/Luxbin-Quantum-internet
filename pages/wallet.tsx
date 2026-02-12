@@ -1,18 +1,21 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import CDPWrapper from "../components/CDPWrapper";
-import { EmbeddedWalletAuth } from "../components/EmbeddedWallet";
-
-function WalletContent() {
-  return (
-    <CDPWrapper>
-      <EmbeddedWalletAuth />
-    </CDPWrapper>
-  );
-}
 
 const WalletContentClient = dynamic(
-  () => Promise.resolve(WalletContent),
+  async () => {
+    const [{ default: CDPWrapper }, { EmbeddedWalletAuth }] = await Promise.all([
+      import("../components/CDPWrapper"),
+      import("../components/EmbeddedWallet"),
+    ]);
+    function WalletContent() {
+      return (
+        <CDPWrapper>
+          <EmbeddedWalletAuth />
+        </CDPWrapper>
+      );
+    }
+    return WalletContent;
+  },
   { ssr: false }
 );
 
