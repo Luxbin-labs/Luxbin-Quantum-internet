@@ -4,7 +4,6 @@ const projectId = process.env.NEXT_PUBLIC_COINBASE_PROJECT_ID;
 
 const cdpConfig: CDPConfig = {
   projectId: projectId || "",
-  basePath: "https://api.cdp.coinbase.com",
   appName: "Luxbin",
   appLogoUrl: "https://luxbinquantuminternet.xyz/icon.jpg",
   ethereum: {
