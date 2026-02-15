@@ -21,6 +21,7 @@ export function EmbeddedWalletAuth() {
 
 function WalletAuthInner() {
   const { isSignedIn } = useIsSignedIn();
+  const [signInError, setSignInError] = useState<string | null>(null);
 
   if (isSignedIn) {
     return <EmbeddedWalletDashboard />;
@@ -28,7 +29,31 @@ function WalletAuthInner() {
 
   return (
     <div style={{ padding: "24px", maxWidth: "440px" }}>
-      <SignIn authMethods={["email", "sms"]} />
+      <SignIn
+        authMethods={["email", "sms"]}
+        onError={(err: unknown) => {
+          const msg = err instanceof Error
+            ? err.message
+            : typeof err === "object" && err !== null && "errorMessage" in err
+            ? String((err as { errorMessage: string }).errorMessage)
+            : String(err);
+          setSignInError(msg);
+        }}
+      />
+      {signInError && (
+        <div style={{
+          marginTop: "12px",
+          padding: "10px",
+          background: "rgba(255,50,50,0.15)",
+          border: "1px solid #ff4444",
+          borderRadius: "8px",
+          fontSize: "12px",
+          color: "#ff8888",
+          wordBreak: "break-all",
+        }}>
+          Debug: {signInError}
+        </div>
+      )}
       <p style={{ marginTop: "12px", fontSize: "12px", color: "#999", textAlign: "center" }}>
         A wallet will be created automatically when you sign in.
         No extensions or seed phrases needed.
