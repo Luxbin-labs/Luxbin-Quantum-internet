@@ -46,6 +46,10 @@
   <a href="https://bsiegelwax.substack.com/p/luxbin-quantum-internet"><img src="https://img.shields.io/badge/📰_Featured-The_Quantum_Dragon-orange" alt="Press"></a>
 </p>
 
+<p align="center">
+  <a href="https://optimism.drips.network/app/projects/github/Luxbin-labs/Luxbin-Quantum-internet" target="_blank"><img src="https://optimism.drips.network/api/embed/project/https%3A%2F%2Fgithub.com%2FLuxbin-labs%2FLuxbin-Quantum-internet/support.png?background=light&style=drips&text=me&stat=none" alt="Support Luxbin-Quantum-internet on drips.network" height="32"></a>
+</p>
+
 ---
 
 <div align="center">
