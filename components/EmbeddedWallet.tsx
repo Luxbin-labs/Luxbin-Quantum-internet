@@ -1,9 +1,25 @@
-import { SignIn, SignOutButton, FundModal, type FundModalProps } from "@coinbase/cdp-react";
+import { CDPReactProvider, SignIn, SignOutButton, FundModal, type FundModalProps } from "@coinbase/cdp-react";
 import { useIsSignedIn, useEvmAddress, useSolanaAddress } from "@coinbase/cdp-hooks";
 import { useCallback, useState } from "react";
 import { getBuyOptions, createBuyQuote } from "@/lib/onramp-api";
 
+const cdpConfig = {
+  projectId: "c93e3649-cf68-4953-a933-2c46bce6fdeb",
+  appName: "Luxbin",
+  ethereum: {
+    createOnLogin: "eoa" as const,
+  },
+};
+
 export function EmbeddedWalletAuth() {
+  return (
+    <CDPReactProvider config={cdpConfig}>
+      <WalletAuthInner />
+    </CDPReactProvider>
+  );
+}
+
+function WalletAuthInner() {
   const { isSignedIn } = useIsSignedIn();
 
   if (isSignedIn) {
