@@ -2,6 +2,9 @@
   "drips": {
     "ethereum": {
       "ownedBy": "0x8B6c167Fd3112a86e40cF9634026D7C773bC0935"
+    },
+    "optimism": {
+      "ownedBy": "0x8B6c167Fd3112a86e40cF9634026D7C773bC0935"
     }
   }
 }
